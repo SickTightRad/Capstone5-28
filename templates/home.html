@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+    <h1 class="main_title">Call of Duties</h1>
+    <p class="main_subtitle">A duty app for cleaners!</p>
+    <p class="lead"></p>
+        <a class="view_duties_button" href="{% url 'duty_list' %}" role="button">View All Duties!</a>
+    </p>
+
+{% endblock content %}

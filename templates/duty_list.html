@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Duties{% endblock title %}
+{% block content %}
+{% for duty in object_list %}
+<div class="card">
+    <div class="card-header">
+        <span class="font-weight-bold">{{ duty.title }} value: {{ duty.point_value }}</span> &middot;
+        <span class="text-muted">by {{ duty.author }} |
+            {{ duty.date }}</span>
+    </div>
+    <div class="card-body">
+        {{ duty.body }}
+    </div>
+    <div class="card-footer text-center text-muted">
+        <a href="{% url 'duty_edit' duty.pk %}">Edit</a> |
+        <a href="{% url 'duty_delete' duty.pk %}">Delete</a>
+    </div>
+
+    </div>
+    <br />
+    {% endfor %}
+    {% endblock content %}
